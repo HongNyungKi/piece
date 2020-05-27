@@ -1,0 +1,120 @@
+body {
+  font-family: 'Raleway', sans-serif;
+  background: #eee; }
+
+#wrapper {
+  width: 900px;
+  height: 400px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  display: flex;
+  align-items: center; }
+
+#left-side {
+  height: 70%;
+  width: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  #left-side ul li {
+    padding: 15px 0;
+    line-height: 2;
+    cursor: pointer;
+    color: rgba(51, 51, 51, 0.5); }
+    #left-side ul li i {
+      font-size: 25px;
+      margin-right: 10px; }
+    #left-side ul li:hover {
+      color: #333333; }
+    #left-side ul li:hover > i {
+      color: #E74C3C; }
+  #left-side ul li.active {
+    color: #333333; }
+    #left-side ul li.active > i {
+      color: #E74C3C; }
+
+#border {
+  width: 1px;
+  height: 75%;
+  background: rgba(51, 51, 51, 0.2); }
+  #border #line.one {
+    width: 5px;
+    height: 55px;
+    background-color: #E74C3C;
+    margin-left: -2px;
+    margin-top: 25px;
+    transition: all .4s ease-in-out; }
+  #border #line.two {
+    width: 5px;
+    height: 55px;
+    background-color: #E74C3C;
+    margin-left: -2px;
+    margin-top: 90px;
+    transition: all .4s ease-in-out; }
+  #border #line.three {
+    width: 5px;
+    height: 55px;
+    background-color: #E74C3C;
+    margin-left: -2px;
+    margin-top: 155px;
+    transition: all .4s ease-in-out; }
+  #border #line.four {
+    width: 5px;
+    height: 55px;
+    background-color: #E74C3C;
+    margin-left: -2px;
+    margin-top: 215px;
+    transition: all .4s ease-in-out; }
+
+#right-side {
+  width: 75%;
+  height: 75%;
+  overflow: hidden; }
+  #right-side #shoppingCart,
+  #right-side #pay,
+  #right-side #like,
+  #right-side #question {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    margin-top: -300px;
+    opacity: 0;
+    transition: all .6s ease-in-out; }
+    #right-side #shoppingCart i,
+    #right-side #pay i,
+    #right-side #like i,
+    #right-side #question i {
+      font-size: 80px; }
+    #right-side #shoppingCart h1,
+    #right-side #pay h1,
+    #right-side #like h1,
+    #right-side #question h1 {
+      font-weight: 800;
+      font-size: 35px;
+      color: #333;
+      padding: 40px; }
+    #right-side #shoppingCart p,
+    #right-side #pay p,
+    #right-side #like p,
+    #right-side #question p {
+      color: #333;
+      padding: 0 30px;
+      line-height: 1.2; }
+  #right-side #shoppingCart.active,
+  #right-side #pay.active,
+  #right-side #like.active,
+  #right-side #question.active {
+    opacity: 1;
+    margin-top: 15px;
+    transition: all .6s ease-in-out; }
+
+
+/*# sourceMappingURL=/menu-slider.8dfaec8e.css.map */
