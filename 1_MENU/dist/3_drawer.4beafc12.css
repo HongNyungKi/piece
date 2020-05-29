@@ -1,0 +1,16 @@
+aside {
+  background: gray;
+  width: 350px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: -350px; }
+
+button {
+  position: absolute;
+  top: 150px;
+  left: 350px;
+  font-size: 50px; }
+
+
+/*# sourceMappingURL=/3_drawer.4beafc12.css.map */
