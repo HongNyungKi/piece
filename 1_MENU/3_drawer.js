@@ -9,12 +9,14 @@ $(function () {
             $aside.stop().animate({
                 left: "0px"
             }, $duration);
-            $button.find("i").attr("class", "fas fa-arrow-left")
+            $button.find("i").attr("class", "fas fa-arrow-left");
+            $button.find("span").text("close");
         } else {
             $aside.stop().animate({
                 left: "-350px"
             }, $duration);
-            $button.find("i").attr("class", "fas fa-arrow-right")
+            $button.find("i").attr("class", "fas fa-arrow-right");
+            $button.find("span").text("open");
         }
     })
 });

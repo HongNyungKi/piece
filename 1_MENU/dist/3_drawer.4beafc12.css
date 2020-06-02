@@ -1,16 +1,60 @@
-aside {
-  background: gray;
-  width: 350px;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: -350px; }
+* {
+  box-sizing: border-box; }
 
-button {
-  position: absolute;
-  top: 150px;
-  left: 350px;
-  font-size: 50px; }
+body {
+  line-height: 1.5;
+  background: #656565; }
+
+.page-header {
+  width: 100%;
+  height: 80px;
+  background: #fff; }
+  .page-header h1 {
+    width: 970px;
+    height: inherit;
+    margin: 0 auto;
+    padding-left: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 80px;
+    letter-spacing: 0.1em; }
+
+.page-main {
+  position: relative; }
+  .page-main aside {
+    background: rgba(0, 0, 0, 0.8);
+    width: 350px;
+    padding: 30px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: -350px; }
+    .page-main aside ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      width: 100%;
+      height: 100%; }
+      .page-main aside ul li img {
+        width: 230px;
+        border-radius: 25%; }
+    .page-main aside button {
+      background: 0, 0, 0, 0.8;
+      display: block;
+      width: 50px;
+      height: 130px;
+      font-size: 25px;
+      border: none;
+      position: absolute;
+      top: 150px;
+      left: 350px;
+      outline: none;
+      cursor: pointer; }
+      .page-main aside button span {
+        writing-mode: vertical-rl;
+        letter-spacing: 2px;
+        font-weight: bold; }
 
 
 /*# sourceMappingURL=/3_drawer.4beafc12.css.map */
