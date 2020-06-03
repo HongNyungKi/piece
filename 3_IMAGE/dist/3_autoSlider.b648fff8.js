@@ -119,28 +119,46 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   return newRequire;
 })({"3_autoSlider.js":[function(require,module,exports) {
 $(function () {
-  //변수 지정
-  var slides = $(".slideShow img"),
-      slidesCount = slides.length,
-      currentIndex = 0; //해당시간이 지나면 한번만 할일
-  //var 변수이름 = setTimeout(할일,시간);
-  //clearTimeout(변수이름);
-  //일정시간 마다 할일 
-  //var 변수이름 = setInterval(할일,시간);
-  //clearInterval(변수이름)
-
+  // 변수지정
+  var slides = $('.slideShow img'),
+      slideCount = slides.length,
+      currentIndex = 0;
   slides.eq(currentIndex).fadeIn();
-  var timer = setInterval(showNextSlide, 1000);
+  var timer = undefined; //타이머의 값을 undefined(지정되어 있지 않다)라고 지정합니다.
+
+  if (!timer) {
+    //타이머의 값이 undefined이면 showNextslide를 3.5s 마다 실행하라고 합니다.
+    timer = setInterval(showNextSlide, 1000);
+  }
 
   function showNextSlide() {
-    //현재 슬라이드 사라지고.
-    //다음 슬라이드 나타난다.
-    var nextIndex = (currentIndex + 1) % slidesCount;
+    var nextIndex = (currentIndex + 1) % slideCount;
     slides.eq(currentIndex).fadeOut();
     slides.eq(nextIndex).fadeIn();
     currentIndex = nextIndex;
     console.log(currentIndex);
   }
+
+  function timeron() {
+    if (!timer) {
+      //타이머의 값이 undefined이면 showNextslide를 3.5s 마다 실행하라고 합니다.
+      timer = setInterval(showNextSlide, 1000);
+    }
+  }
+
+  function timeroff() {
+    if (timer) {
+      //타이머의 값이 있으면 즉 setInterval(showNextSlide, 1000)값이 있으면 클리어하고 값을 다시 undefined로 저장.
+      clearInterval(timer);
+      timer = undefined;
+    }
+  }
+
+  slides.mouseenter(function () {
+    timeroff();
+  }).mouseleave(function () {
+    timeron();
+  });
 });
 },{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -170,7 +188,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54025" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62415" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
