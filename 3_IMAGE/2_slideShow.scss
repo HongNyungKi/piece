@@ -1,9 +1,11 @@
 .slideShow {
     background: black;
-    min-width: 500px;
+    width: 500px;
     height: 400px;
     overflow: hidden;
     position: relative;
+    left: 50%;
+    transform: translateX(-50%);
 
     .slideShow_slides {
         position: absolute;
@@ -12,8 +14,10 @@
 
         a {
             position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
+            width: inherit;
+            height: inherit;
+            text-align: center;
+            cursor: crosshair;
         }
     }
 
@@ -33,7 +37,17 @@
             &:last-child {
                 margin-left: 200px;
             }
+
+            &:hover {
+                color: black;
+                cursor: pointer;
+            }
+
+            &.disabled {
+                display: none;
+            }
         }
+
     }
 
     .indicator {
@@ -50,11 +64,12 @@
             border-radius: 50%;
             margin: 0 5px;
             background: white;
+            opacity: 0.8;
             text-indent: -9999px;
-        }
 
-        a.active {
-            background: black;
+            &.active {
+                background: black;
+            }
         }
     }
 }
