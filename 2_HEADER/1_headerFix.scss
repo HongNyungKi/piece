@@ -1,0 +1,25 @@
+.dummy {
+    width: 50%;
+    margin: 0 auto;
+    font-size: 20px;
+    line-height: 2;
+}
+
+
+/*
+ * Sticky header
+ */
+
+
+.page-header {
+    background-color: gray;
+    height: 70px;
+    width: 100%;
+    position: absolute;
+    top: 300px;
+}
+
+.page-header.sticky {
+    position: fixed;
+    top: 0;
+}
