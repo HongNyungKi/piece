@@ -1,0 +1,26 @@
+.progress-bar {
+    position: relative;
+    width: 1000px;
+    height: 30px;
+    margin: 3em auto;
+    border: 1px solid green;
+
+    .bar {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        background: green;
+        width: 0;
+    }
+
+    .rate {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 15px;
+        font-size: 18px;
+        color: green;
+        line-height: 30px;
+    }
+}
