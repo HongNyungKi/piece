@@ -126,7 +126,12 @@ $(function () {
   progressBar.animate({
     width: progressRate + "%"
   }, 2500);
-  progressText.text("0%");
+  setInterval(textAnimation, 1000 / 10);
+
+  function textAnimation() {
+    var currentRate = progressBar.width() / progressWrap.width() * 100;
+    progressText.text(Math.ceil(currentRate) + "%");
+  }
 });
 },{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -156,7 +161,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50837" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49942" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
