@@ -10,7 +10,7 @@ $(function () {
     var $count = $(".count"),
         $unit = $(".unitPrice").text()
     $unitPrice = $unit.replace(",", ""),
-        //속성을 사용하여 포현해볼것
+        //html속성을 사용하여 포현해볼것
         $currentNumber = parseInt($count.text()),
         $total = $(".total");
 
