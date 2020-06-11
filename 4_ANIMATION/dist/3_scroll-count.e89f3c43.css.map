@@ -1,0 +1,1 @@
+{"version":3,"sources":["3_scroll-count.scss"],"names":[],"mappings":"AAAA,QAAQ,CAAC;EACL,KAAK,EAAE,KAAK;EACZ,MAAM,EAAE,MAAM;EACd,MAAM,EAAE,MAAM;EACd,MAAM,EAAE,cAAc,GACzB","file":"3_scroll-count.e89f3c43.css","sourceRoot":"..","sourcesContent":[".section {\r\n    width: 960px;\r\n    margin: 0 auto;\r\n    height: 1200px;\r\n    border: 1px solid gray;\r\n}"]}
