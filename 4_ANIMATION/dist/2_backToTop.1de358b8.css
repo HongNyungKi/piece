@@ -1,0 +1,19 @@
+.dummy {
+  margin: 50px 300px;
+  font-size: 30px;
+  line-height: 45px; }
+
+.go_top {
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+  background: #333;
+  color: #fff;
+  line-height: 40px;
+  text-align: center;
+  display: none; }
+
+
+/*# sourceMappingURL=/2_backToTop.1de358b8.css.map */
