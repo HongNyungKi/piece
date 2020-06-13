@@ -1,0 +1,21 @@
+html {
+  height: 100%; }
+
+body {
+  height: 100%;
+  overflow: hidden; }
+
+.scene {
+  height: 100%;
+  position: relative; }
+
+.full-bg {
+  position: absolute; }
+
+.full-bg img {
+  position: absolute;
+  height: 100%;
+  width: 100%; }
+
+
+/*# sourceMappingURL=/3_fullScreen.fe56d9aa.css.map */
