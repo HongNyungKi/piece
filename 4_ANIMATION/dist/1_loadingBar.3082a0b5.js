@@ -125,7 +125,7 @@ $(function () {
       progressRate = progressText.attr("data-rate");
   progressBar.animate({
     width: progressRate + "%"
-  }, 2500);
+  }, 1500);
   setInterval(textAnimation, 1000 / 10);
 
   function textAnimation() {
@@ -161,7 +161,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49942" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62218" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

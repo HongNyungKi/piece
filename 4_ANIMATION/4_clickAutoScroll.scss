@@ -1,0 +1,70 @@
+body {
+    background: #545454;
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+
+    .wrap {
+        width: 950px;
+        margin: 0 auto;
+        padding-bottom: 400px;
+
+        .top_menu {
+            position: fixed;
+            top: 0;
+            width: inherit;
+            text-align: center;
+            height: 100px;
+            background: #545454;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 25px;
+
+            .logo {
+                font-size: 50px;
+
+                a {
+                    padding: 10px 25px;
+
+                    &:hover {
+                        color: black;
+                    }
+                }
+
+            }
+
+            ul {
+                display: flex;
+                width: 50%;
+                justify-content: space-around;
+
+                li {
+                    a {
+                        padding: 30px;
+
+                        &:hover {
+                            color: black;
+                        }
+                    }
+                }
+
+                li.on a {
+                    color: black;
+                    font-weight: bold;
+                }
+            }
+        }
+
+        .contents {
+            margin-top: 100px;
+
+            img {
+                display: block;
+                height: 100%;
+            }
+        }
+    }
+}

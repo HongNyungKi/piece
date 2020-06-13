@@ -6,7 +6,7 @@ $(function () {
 
     progressBar.animate({
         width: progressRate + "%"
-    }, 2500);
+    }, 1500);
 
     setInterval(textAnimation, 1000 / 10);
 
@@ -14,4 +14,4 @@ $(function () {
         var currentRate = progressBar.width() / progressWrap.width() * 100;
         progressText.text(Math.ceil(currentRate) + "%");
     }
-})
+});

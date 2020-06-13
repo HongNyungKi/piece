@@ -11,7 +11,7 @@
         top: 0;
         bottom: 0;
         background: green;
-        width: 0;
+        width: 0; //width값을 반드시 0! 로딩바가 구현되는 출발점이다.
     }
 
     .rate {
