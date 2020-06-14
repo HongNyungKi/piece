@@ -1,0 +1,35 @@
+body {
+    background: green;
+
+    header {
+        position: fixed;
+        margin-top: 20px;
+        background: linear-gradient(white 50px,
+                rgba(255, 255, 255, 0.5) 50px, rgba(255, 255, 255, 0.5));
+        width: 100%;
+        overflow: hidden;
+
+
+        .menuGroup {
+            width: 50%;
+            height: 50px;
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+
+            a {
+                line-height: 50px;
+                font-size: 20px;
+                text-decoration: none;
+                color: black;
+            }
+
+            .sub-menu {
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+            }
+        }
+    }
+}

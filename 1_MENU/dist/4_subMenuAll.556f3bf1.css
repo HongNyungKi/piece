@@ -1,0 +1,27 @@
+body {
+  background: green; }
+  body header {
+    position: fixed;
+    margin-top: 20px;
+    background: linear-gradient(white 50px, rgba(255, 255, 255, 0.5) 50px, rgba(255, 255, 255, 0.5));
+    width: 100%;
+    overflow: hidden; }
+    body header .menuGroup {
+      width: 50%;
+      height: 50px;
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-start; }
+      body header .menuGroup a {
+        line-height: 50px;
+        font-size: 20px;
+        text-decoration: none;
+        color: black; }
+      body header .menuGroup .sub-menu {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around; }
+
+
+/*# sourceMappingURL=/4_subMenuAll.556f3bf1.css.map */
