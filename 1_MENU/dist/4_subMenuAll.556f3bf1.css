@@ -20,8 +20,9 @@ body {
       body header .menuGroup .sub-menu {
         position: absolute;
         display: flex;
-        flex-direction: column;
-        justify-content: space-around; }
+        flex-direction: column; }
+        body header .menuGroup .sub-menu li {
+          line-height: 50px; }
 
 
 /*# sourceMappingURL=/4_subMenuAll.556f3bf1.css.map */

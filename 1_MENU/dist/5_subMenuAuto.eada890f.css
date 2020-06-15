@@ -1,0 +1,29 @@
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both; }
+
+body {
+  background: green; }
+  body header {
+    margin-top: 20px;
+    height: 50px;
+    background: linear-gradient(white 50px, rgba(255, 255, 255, 0.5) 50px, rgba(255, 255, 255, 0.5)); }
+    body header nav {
+      width: 960px;
+      margin: 0 auto; }
+      body header nav .main-menu {
+        float: left;
+        line-height: 50px;
+        margin-right: 40px;
+        position: relative; }
+        body header nav .main-menu .sub-menu {
+          position: absolute;
+          display: none; }
+          body header nav .main-menu .sub-menu li {
+            white-space: nowrap; }
+        body header nav .main-menu:hover .sub-menu {
+          display: block; }
+
+
+/*# sourceMappingURL=/5_subMenuAuto.eada890f.css.map */

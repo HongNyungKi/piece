@@ -1,0 +1,42 @@
+.clearfix:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+body {
+    background: green;
+
+    header {
+        margin-top: 20px;
+        height: 50px;
+        // overflow: hidden;
+        background: linear-gradient(white 50px, rgba(255, 255, 255, 0.5) 50px, rgba(255, 255, 255, 0.5));
+
+        nav {
+            width: 960px;
+            margin: 0 auto;
+
+            .main-menu {
+                float: left;
+                line-height: 50px;
+                margin-right: 40px;
+                position: relative;
+
+                .sub-menu {
+                    position: absolute;
+                    //position:absolute를 주면 sub-menu의 크기에 따라 main-menu의 크기가 변동하는 것을 막기위함이다.
+                    display: none;
+
+                    li {
+                        white-space: nowrap;
+                    }
+                }
+
+                &:hover .sub-menu {
+                    display: block;
+                }
+            }
+        }
+    }
+}
