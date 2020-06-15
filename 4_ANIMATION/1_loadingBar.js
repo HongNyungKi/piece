@@ -8,10 +8,12 @@ $(function () {
         width: progressRate + "%"
     }, 1500);
 
-    setInterval(textAnimation, 1000 / 10);
-
-    function textAnimation() {
-        var currentRate = progressBar.width() / progressWrap.width() * 100;
-        progressText.text(Math.ceil(currentRate) + "%");
-    }
+    var percent_number_step = $.animateNumber.numberStepFactories.append(' %')
+    progressText.animateNumber({
+        number: progressRate,
+        numberStep: percent_number_step
+    }, {
+        easing: 'swing',
+        duration: 1500
+    });
 });

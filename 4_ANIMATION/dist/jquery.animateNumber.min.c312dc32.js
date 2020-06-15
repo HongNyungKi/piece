@@ -117,79 +117,96 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
-var bundleURL = null;
-
-function getBundleURLCached() {
-  if (!bundleURL) {
-    bundleURL = getBundleURL();
-  }
-
-  return bundleURL;
-}
-
-function getBundleURL() {
-  // Attempt to find the URL of the current script and use that as the base URL
-  try {
-    throw new Error();
-  } catch (err) {
-    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
-
-    if (matches) {
-      return getBaseURL(matches[0]);
+})({"jquery.animateNumber.min.js":[function(require,module,exports) {
+/*
+ jQuery animateNumber plugin v0.0.14
+ (c) 2013, Alexandr Borisov.
+ https://github.com/aishek/jquery-animateNumber
+*/
+(function (d) {
+  var r = function r(b) {
+    return b.split("").reverse().join("");
+  },
+      m = {
+    numberStep: function numberStep(b, a) {
+      var e = Math.floor(b);
+      d(a.elem).text(e);
     }
-  }
-
-  return '/';
-}
-
-function getBaseURL(url) {
-  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)\/[^/]+$/, '$1') + '/';
-}
-
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-},{}],"../node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
-var bundle = require('./bundle-url');
-
-function updateLink(link) {
-  var newLink = link.cloneNode();
-
-  newLink.onload = function () {
-    link.remove();
+  },
+      g = function g(b) {
+    var a = b.elem;
+    a.nodeType && a.parentNode && (a = a._animateNumberSetter, a || (a = m.numberStep), a(b.now, b));
   };
 
-  newLink.href = link.href.split('?')[0] + '?' + Date.now();
-  link.parentNode.insertBefore(newLink, link.nextSibling);
-}
+  d.Tween && d.Tween.propHooks ? d.Tween.propHooks.number = {
+    set: g
+  } : d.fx.step.number = g;
+  d.animateNumber = {
+    numberStepFactories: {
+      append: function append(b) {
+        return function (a, e) {
+          var f = Math.floor(a);
+          d(e.elem).prop("number", a).text(f + b);
+        };
+      },
+      separator: function separator(b, a, e) {
+        b = b || " ";
+        a = a || 3;
+        e = e || "";
+        return function (f, k) {
+          var u = 0 > f,
+              c = Math.floor((u ? -1 : 1) * f).toString(),
+              n = d(k.elem);
 
-var cssTimeout = null;
+          if (c.length > a) {
+            for (var h = c, l = a, m = h.split("").reverse(), c = [], p, s, q, t = 0, g = Math.ceil(h.length / l); t < g; t++) {
+              p = "";
 
-function reloadCSS() {
-  if (cssTimeout) {
-    return;
-  }
+              for (q = 0; q < l; q++) {
+                s = t * l + q;
+                if (s === h.length) break;
+                p += m[s];
+              }
 
-  cssTimeout = setTimeout(function () {
-    var links = document.querySelectorAll('link[rel="stylesheet"]');
+              c.push(p);
+            }
 
-    for (var i = 0; i < links.length; i++) {
-      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
-        updateLink(links[i]);
+            h = c.length - 1;
+            l = r(c[h]);
+            c[h] = r(parseInt(l, 10).toString());
+            c = c.join(b);
+            c = r(c);
+          }
+
+          n.prop("number", f).text((u ? "-" : "") + c + e);
+        };
       }
     }
+  };
 
-    cssTimeout = null;
-  }, 50);
-}
+  d.fn.animateNumber = function () {
+    for (var b = arguments[0], a = d.extend({}, m, b), e = d(this), f = [a], k = 1, g = arguments.length; k < g; k++) {
+      f.push(arguments[k]);
+    }
 
-module.exports = reloadCSS;
-},{"./bundle-url":"../node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"1_loadingBar.scss":[function(require,module,exports) {
-var reloadCSS = require('_css_loader');
+    if (b.numberStep) {
+      var c = this.each(function () {
+        this._animateNumberSetter = b.numberStep;
+      }),
+          n = a.complete;
 
-module.hot.dispose(reloadCSS);
-module.hot.accept(reloadCSS);
-},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+      a.complete = function () {
+        c.each(function () {
+          delete this._animateNumberSetter;
+        });
+        n && n.apply(this, arguments);
+      };
+    }
+
+    return e.animate.apply(e, f);
+  };
+})(jQuery);
+},{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -393,5 +410,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js"], null)
-//# sourceMappingURL=/1_loadingBar.66f4b120.js.map
+},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","jquery.animateNumber.min.js"], null)
+//# sourceMappingURL=/jquery.animateNumber.min.c312dc32.js.map

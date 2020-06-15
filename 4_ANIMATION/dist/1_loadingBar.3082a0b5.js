@@ -126,12 +126,14 @@ $(function () {
   progressBar.animate({
     width: progressRate + "%"
   }, 1500);
-  setInterval(textAnimation, 1000 / 10);
-
-  function textAnimation() {
-    var currentRate = progressBar.width() / progressWrap.width() * 100;
-    progressText.text(Math.ceil(currentRate) + "%");
-  }
+  var percent_number_step = $.animateNumber.numberStepFactories.append(' %');
+  progressText.animateNumber({
+    number: progressRate,
+    numberStep: percent_number_step
+  }, {
+    easing: 'swing',
+    duration: 1500
+  });
 });
 },{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -161,7 +163,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62218" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50569" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
