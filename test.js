@@ -1,87 +1,48 @@
-$(".choose").click(function () {
-    $(".choose").addClass("active");
-    $(".choose > .icon").addClass("active");
-    $(".pay").removeClass("active");
-    $(".wrap").removeClass("active");
-    $(".ship").removeClass("active");
-    $(".pay > .icon").removeClass("active");
-    $(".wrap > .icon").removeClass("active");
-    $(".ship > .icon").removeClass("active");
-    $("#line").addClass("one");
-    $("#line").removeClass("two");
-    $("#line").removeClass("three");
-    $("#line").removeClass("four");
-})
+$(function () {
+    // 변수지정
+    var slides = $('.slideshow img'),
+        slideCount = slides.length,
+        currentIndex = 0;
 
-$(".pay").click(function () {
-    $(".pay").addClass("active");
-    $(".pay > .icon").addClass("active");
-    $(".choose").removeClass("active");
-    $(".wrap").removeClass("active");
-    $(".ship").removeClass("active");
-    $(".choose > .icon").removeClass("active");
-    $(".wrap > .icon").removeClass("active");
-    $(".ship > .icon").removeClass("active");
-    $("#line").addClass("two");
-    $("#line").removeClass("one");
-    $("#line").removeClass("three");
-    $("#line").removeClass("four");
-})
+    slides.eq(currentIndex).fadeIn();
 
-$(".wrap").click(function () {
-    $(".wrap").addClass("active");
-    $(".wrap > .icon").addClass("active");
-    $(".pay").removeClass("active");
-    $(".choose").removeClass("active");
-    $(".ship").removeClass("active");
-    $(".pay > .icon").removeClass("active");
-    $(".choose > .icon").removeClass("active");
-    $(".ship > .icon").removeClass("active");
-    $("#line").addClass("three");
-    $("#line").removeClass("two");
-    $("#line").removeClass("one");
-    $("#line").removeClass("four");
-})
+    var timer = undefined; //타이머의 값을 undefined(지정되어 있지 않다)라고 지정합니다.
 
-$(".ship").click(function () {
-    $(".ship").addClass("active");
-    $(".ship > .icon").addClass("active");
-    $(".pay").removeClass("active");
-    $(".wrap").removeClass("active");
-    $(".choose").removeClass("active");
-    $(".pay > .icon").removeClass("active");
-    $(".wrap > .icon").removeClass("active");
-    $(".choose > .icon").removeClass("active");
-    $("#line").addClass("four");
-    $("#line").removeClass("two");
-    $("#line").removeClass("three");
-    $("#line").removeClass("one");
-})
+    if (!timer) { //타이머의 값이 undefined이면 showNextslide를 3.5s 마다 실행하라고 합니다.
+        timer = setInterval(showNextSlide, 3500);
+    }
 
-$(".choose").click(function () {
-    $("#first").addClass("active");
-    $("#second").removeClass("active");
-    $("#third").removeClass("active");
-    $("#fourth").removeClass("active");
-})
+    function showNextSlide() {
 
-$(".pay").click(function () {
-    $("#first").removeClass("active");
-    $("#second").addClass("active");
-    $("#third").removeClass("active");
-    $("#fourth").removeClass("active");
-})
+        var nextIndex = (currentIndex + 1) % slideCount;
 
-$(".wrap").click(function () {
-    $("#first").removeClass("active");
-    $("#second").removeClass("active");
-    $("#third").addClass("active");
-    $("#fourth").removeClass("active");
-})
+        slides.eq(currentIndex).fadeOut();
+        slides.eq(nextIndex).fadeIn();
+        currentIndex = nextIndex;
 
-$(".ship").click(function () {
-    $("#first").removeClass("active");
-    $("#second").removeClass("active");
-    $("#third").removeClass("active");
-    $("#fourth").addClass("active");
-})
+        console.log(currentIndex);
+
+    }
+
+    function timeron() {
+        if (!timer) { //타이머의 값이 undefined이면 showNextslide를 3.5s 마다 실행하라고 합니다.
+            timer = setInterval(showNextSlide, 3500);
+        }
+    }
+
+    function timeroff() {
+        if (timer) { //타이머의 값이 있으면 즉 setInterval(showNextSlide, 3500)값이 있으면 클리어하고 값을 다시 undefined로 저장.
+            clearInterval(timer);
+            timer = undefined;
+        }
+    }
+
+    slides.mouseenter(function () {
+            timeroff();
+        })
+        .mouseleave(function () {
+            timeron();
+        })
+
+
+});
